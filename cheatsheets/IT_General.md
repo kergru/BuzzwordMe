@@ -1,7 +1,8 @@
 # REST - Represential State Transfer 
 (Roy Fielding)
 
-Paradigma für die Softwarearchitektur von verteilten Systemen
+Paradigma für die Softwarearchitektur von verteilten Systemen.
+
 REST ist eine Abstraktion der Struktur und des Verhaltens des World Wide Web.
 Eine Ressource kann dabei über verschiedene Medientypen dargestellt werden, auch Repräsentation der Ressource genannt.
 Anders als bei vielen verwandten Architekturen kodiert REST keine Methodeninformation in den URI, da der URI Ort und Namen der Ressource angibt
@@ -45,7 +46,7 @@ Bestandteile:
 * die Services sind unabhängig voneinander entwickelbar und deploybar und um Business-Anforderungen herum gruppiert
 * die Services sind selfcontained, bringen alles mit was sie für ihren Betrieb benötigen
 
-Fowler: do one thin and do it well
+Fowler: do one thing and do it well
 
 Vorteile:
 * Modularität
@@ -163,7 +164,7 @@ Vorteile:
 * Sprint-Planning
 * Daily Review
 * Sprint Review
-* Spring Retrospektive
+* Sprint Retrospektive
 
 ## Kanban
 Kanban ist eine einfache, agile "Best Practice"-Methode, die darauf abzielt, einen kontinuierlichen Workflow
