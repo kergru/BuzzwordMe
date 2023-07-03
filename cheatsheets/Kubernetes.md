@@ -17,6 +17,8 @@ Open Source system for automaticly deployment, scaling and management of contain
 * Pod:  smallest deployable units of computing that you can create and manage in Kubernetes.
 * Service:  is a method for exposing a network application that is running as one or more Pods in your cluster.
 * Volume
+  * ephemeral (lifetime of a pod)
+  * persistent
 * Namespace: a mechanism for isolating groups of resources within a single cluster
 * Controller (Highlevel Abstraktionen on top der Basisobjekte)
   * ReplicaSet
