@@ -52,7 +52,12 @@ A layer is a logical separation of components or code:
 
 # Restful Webservices
 Architeckturstil für verteilte Systeme
-RESTful Webservices sind Statuslos und liefern die Daten in unterschiedliche Repräsentationen (Formate) an den Aufrufer. Die Daten werden in mit einer URI eindeutig identifiziert und als Ressource bezeichnet.
+RESTful Webservices sind statuslos und liefern die Daten in unterschiedliche Repräsentationen (Formate) an den Aufrufer. Die Daten werden in mit einer URI eindeutig identifiziert und als Ressource bezeichnet.
+
+Alternativen:
+* RPC - Remote Procedure Call (OS dependent)
+* RMI - Remote Method Invocation (Java), supports object-oriented programming)
+
 
 # DesignPatterns
 
@@ -75,12 +80,14 @@ Provides an interface for creating objects in a superclass, but allows subclasse
 Lets you ensure that a class has only one instance, while providing a global access point to this instance.
 Example: java.lang.Runtime#getRuntime()
 
+
 ### Structural Patterns
+
 #### Adapter
 Allows objects with incompatible interfaces to collaborate.The Adapter acts as a wrapper between two objects. It catches calls for one object and transforms them to format and interface recognizable by the second object.
 
 #### Bridge
-divides business logic or huge class into separate class hierarchies that can be developed independently.
+Divides business logic or huge class into separate class hierarchies that can be developed independently.
 One of these hierarchies (often called the Abstraction) will get a reference to an object of the second hierarchy (Implementation). The abstraction will be able to delegate some (sometimes, most) of its calls to the implementations object. Since all implementations will have a common interface, they’d be interchangeable inside the abstraction.
 Example: Device and Remote Control
 
@@ -116,7 +123,7 @@ Lets you define a family of algorithms, put each of them into a separate class, 
 Lets you separate algorithms from the objects on which they operate.
 
 #### Interceptor
-rweiterung eines Frameworks oder einer Middleware, ohne diese selbst zu verändern
+Erweiterung eines Frameworks oder einer Middleware, ohne diese selbst zu verändern
 
 ## Architektur Patterns
 

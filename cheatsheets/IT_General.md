@@ -68,6 +68,12 @@ Vorteile:
   * arrange (given)
   * act   (when)
   * assert (then)
+* FIRST - Testing Principle
+  * Fast
+  * Independent
+  * Repeatable
+  * Self-validating
+  * Thorough (gründlich, sorgfältig)
 
 ## Design rules
 * Keep configurable data at high levels.

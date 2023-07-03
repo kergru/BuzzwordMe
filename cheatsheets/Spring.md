@@ -30,6 +30,10 @@ Vorteile:
 ## Spring WebFlux
 Entwicklung von Webanwendungen auf dem reactive stack (Reactive Stream API) die auf non-blocking Webserver (Netty) laufen
 
+Spring WebFlux is a non-blocking framework built on Project Reactor that makes it possible to build reactive applications on top of HTTP layer. It does not require the Servlet API. Per default, Spring WebFlux uses an embedded HTTP/2 enabled server Reactor Netty. The major difference to Spring MVC — the REST controller’s methods return the reactive types Mono and Flux.
+
+Spring Webflux handles the conversion of these streams to HTTP protocol compliant response.
+
 ### Was bedeuted reactive?
 Interaktion asynchroner Resourcen mit backpressure
 
@@ -39,8 +43,17 @@ Interaktion asynchroner Resourcen mit backpressure
 + **Processor**: Ein Processor transformiert Elemente, die zwischen Publisher und Subscriber übertragen werden
 
 
-### Reactor
+### Project Reactor
 Reactive Library für WebFlux (Mono,  Flux)
+
+is a reactive library for building non-blocking applications which is based on the Reactive Streams Specification.
+At first glance, Reactive Streams and Java 8 Streams look pretty similar. But there is an important difference: Reactive Streams are push-based and Java 8 Streams are pull based. In Java 8 Streams you normally iterate over collections, pull values, apply operators like filter, map, flatMap, etc., and terminate the processing by collecting or grouping result values.
+Reactive Streams have similar operators, but they offer Publishers that notify Subscribers of newly available values as they come. In the Project Reactor, there are two heavily used publishers:
+
+Publishers:
+* Mono<T>. It returns 0 or 1 element of type T.
+* Flux<T>. It returns 0…N elements of type T. The count of published elements can be potentially infinite.
+
 ### Ziel
 * Concurrency mit kleinerer Anzahl von Threads
 * Skalierung mit wenigener Hardware Ressourcen
@@ -59,10 +72,12 @@ Backpressure in software systems is the capability to overload the traffic commu
   * Limiting the number of events to receive at the client-side
   * Canceling the data streaming when the consumer cannot process more events.
 
+
 ### map vs flatMap
 map: Innerhalb des map-Befehls  muss nicht mit den Webflux-Publishern gearbeitet werden, die eigentliche Geschäftslogik kann also mit gewöhnlichem Java-Code implementiert werden.
 flatMap: als Rückgabewert der übergebenen Methode wieder einen Publisher erwartet
 Das ist etwa dann sinnvoll, wenn diese Methode ihrerseits wieder einen API-Aufruf absetzen muss.
+
 
 ## Spring Data JPA
 provides repository support for the Jakarta Persistence API (JPA). It eases development of applications that need to access JPA data sources.

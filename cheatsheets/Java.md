@@ -35,6 +35,9 @@ Modell der Computerprogrammierung, bei dem das Softwaredesign auf Daten oder Obj
 ## Funktionale Programmierung
 Ein funktionales Programm besteht aus einer Reihe von Funktionsaufrufen. Eigenständige Wertzuweisungen existieren nicht. Alle Elemente können als Funktionen aufgefasst werden.
 
+## Reactive Programming 
+is the processing of the asynchronous event stream, on which you can observe.
+
 ## Java Keywords
 
 
@@ -93,6 +96,10 @@ Reactive Programming is the processing of the asynchronous event stream, on whic
 #### Reactive Streams
 
 ## Java 8
+
+### CompletableFutures
+
+CompletableFuture is built as an advancement to Future interface. Both of these are used for asynchronous programming in java. While Future interface has limitations in terms of what can be done with a result of an asynchronous call, CompletableFuture provides an array of APIs for composing, combining and error handling in asynchronous situations. It also provides a way to build a pipeline which will perform all the operations in asynchronous manner, in the order we define.
 
 ### Stream API
 
@@ -172,6 +179,7 @@ Sprachelement, das die Einbindung von Metadaten in den Quelltext erlaubt
 
 Blocking methods execute synchronously and non-blocking methods execute asynchronously. 
 
+# Servlet API
 * **Servlet 2.5:** Servlet containers will assign a request to a thread until that request has been fully processed.
 * **Servlet 3.0:** async processing, the server can dispatch the request processing in a separate thread pool while the request is being processed by the application. However, when it comes to I/O, work always happens on a server thread and it is always blocking. This means that a "slow client" can monopolize a server thread, since the server is blocked while reading/writing to that client with a poor network connection.
 * **Servlet 3.1:** async I/O is allowed and in that case the "one request/thread" model isn't anymore.
