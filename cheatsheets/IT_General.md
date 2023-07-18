@@ -174,67 +174,6 @@ Vorteile:
 * Elastic (skalierbar): Das System bleibt auch unter sich ändernden Lastbedingungen antwortbereit.
 * Message-driven (nachrichtenorientiert): Das System verwendet asynchrone Nachrichtenübermittlung zwischen seinen Komponenten zur Sicherstellung von deren Entkopplung und Isolation sowie zwecks Übermittlung von Fehlern an übergeordnete Komponenten.
 
-# Agiles Projektmanagement / Agile Softwareentwicklung 
-
-## Agiles Manifest
-
-1. Individuen und Interaktionen sind wichtiger als Prozesse und Werkzeuge.
-2. Funktionierende Software ist wichtiger als umfassende Dokumentation.
-3. Zusammenarbeit mit dem Kunden ist wichtiger als Vertragsverhandlungen.
-4. Reagieren auf Veränderung ist wichtiger als das Befolgen eines Plans.
-
-## Scrum
-
-### Scrum-Werte:
-* Selbstverpflichtung bzw. Commitment
-* Mut
-* Offenheit
-* Fokus
-* Respekt
-
-### Rollen
-* ProductOwner
-* Scrum-Master
-* Developer
-
-### Ereignisse
-* Sprint-Planning
-* Daily Review
-* Sprint Review
-* Sprint Retrospektive
-
-## Kanban
-Kanban ist eine einfache, agile "Best Practice"-Methode, die darauf abzielt, einen kontinuierlichen Workflow
-zu schaffen - und einen dauerhaften Mehrwert für den Kunden. Ziel ist es, jeden Softwareentwicklungsprozess
-zu visualisieren und zu verbessern. Das Endergebnis ist eine Entwicklungspipeline, die zuverlässig und effizient hochwertige Arbeit leistet.
-
-### 3 Grundprinzipien
-* Workflow-Abbildung
-  * Backlog -> Ready -> Coding -> Testing -> Approval -> Done
-* WIP begrenzen
-* Vorlaufzeit messen
-
-## Techniken der agilen Softwareentwicklung
-
-### TDD - Test Driven Development
-(Kent Beck)
-
-Bei der testgetriebenen Entwicklung erstellt der Programmierer Softwaretests konsequent vor den zu testenden Komponenten.
-
-Programmierung erfolgt in kleinen, wiederholten Mikroiterationen:
-1. Red: Schreibe einen Test für eine neue Funktion, Test schlägt zunächst fehl
-2. Green: Anpassung des Programmcodes mit möglichst wenig Aufwand, bis der Testdurchlauf den Test besteht
-3. Refactoring
-
-### BDD - Behavior Driven Development
-(Dan North)
-Technik der agilen Softwareentwicklung
-
-Beim Behavior Driven Development werden während der Anforderungsanalyse die Aufgaben, Ziele und Ergebnisse der Software in einer bestimmten Textform festgehalten, die später als automatisierte Tests ausgeführt werden kann. Damit kann die Software auf ihre korrekte Implementierung getestet werden
-Die Softwareanforderungen werden dabei meist in „Wenn-dann“-Sätzen basierend auf der Sprache des Domain-driven Designs verfasst.
-Damit soll der Übergang zwischen der Sprache der Definition der fachlichen Anforderungen und der Programmiersprache, mittels derer die Anforderungen umgesetzt werden, erleichtert werden.
-
-Frameworks: JBehave, JGiven
 
 # Idempotenz
 Programmcode, das mehrfach hintereinander ausgeführt das gleiche Ergebnis wie bei einer einzigen Ausführung liefert
@@ -260,6 +199,21 @@ Programmcode, das mehrfach hintereinander ausgeführt das gleiche Ergebnis wie b
     * Der Resource Server prüft das Access Token und stellt, wenn gültig, die gewünschten Daten zur Verfügung.
 * **OpenID Connect** - is a simple identity layer on top of the OAuth 2.0 protocol. It allows Clients to verify the identity of the End-User based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the End-User in an interoperable and REST-like manner.
 * **Keycloak** - is an open source identity and access management solution, ermöglicht Single-Sign On, Identity Brokering and Social Login, Fedaration (LDAP Anbindung)
+
+# Protokolle
+
+## AMQP Das Advanced Message Queuing Protocol
+ist ein offener Standard, der ein binäres Netzwerkprotokoll auf Anwendungsebene für eine Message-orientierte Middleware (MOM) darstellt
+
+## LDAP -  Lightweight Directory Access Protocol
+ist ein Softwareprotokoll, das es jedem ermöglicht, Daten über Organisationen, Einzelpersonen 
+und andere Ressourcen wie Dateien und Geräte in einem Netzwerk zu finden – sei es im öffentlichen 
+Internet oder im Intranet eines Unternehmens.
+
+## HTTP
+
+### ETag
+Entitäts-Kennzeichen‘) ist ein im HTTP 1.1 eingeführtes Header-Feld. Es dient zur Bestimmung von Änderungen an der angeforderten Ressource und wird hauptsächlich zum Caching, also der Vermeidung redundanter Datenübertragungen, verwendet.
 
 # Bücher
 | Title                                                              | Autor                                                   |
