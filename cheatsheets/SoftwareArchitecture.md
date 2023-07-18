@@ -1,6 +1,12 @@
 # Microservice Archtekture
 (Martin Fowler)
 
+# SOA
+service-oriented architecture, software approach for distributed systems
+
+The central concept behind your SOA design is the isolation of your sub-systems or services from the impact of change in other systems or services.
+You can get there by declaring service boundaries.
+
 # DDD
 (Eric Evans)
 basiert auf folgenden zwei Annahmen:
