@@ -59,10 +59,40 @@ Install a package globally:
      add(2); // nur noch das erste Argument ist notwendig, ABER: Argumente mit Defaultwerten müssen immer RECHTS stehen!
 
 ## Spread Operator
+* zieht die Elemente aus einem Array und kopiert sind in ein neues Array
+* kann auch einzelne Objekte in ein neues Object kopieren
+
 
     const hobbies = ['Sports', 'Cooking'];
     const activeHobbies = [];
     activeHobbies.push(...hobbies);
+
+## Rest Operator
+unbestimmte Anzahl an Parametern
+
+    const toArray = (...args)  => {
+        return args;
+    }
+    toArray(1,2,3,4);
+
+## Destructuring
+* rausziehen nur der benötigten properties aus Objekt
+
+
+    cpnst person = {
+        name: 'xxx',
+        age: 25
+    }
+    const printName = ({name}) => {
+        console.log(name);
+    }
+    printName(person);
+
+* bei Arrays:
+    
+
+    const hobbies = ['sports','cooking'];
+    const [hobby1, hooby2] = hobbies;
 
 ## Closures
 
@@ -113,5 +143,17 @@ global methods:
     npx ts-jest config:init --> initialisiert config.ts
 
 initialize with config.ts manually
+
+# Libs & Frameworks
+* loopback
+* express
+* axios - Promise based Http client
+* 
+
+## Testing Libs & Framewoks
+* sinon
+* mocha
+* jest
+* chai
 
 

@@ -5,6 +5,15 @@ JDK
 JRE
 JVM
 
+## AOT vs JIT
+There are two ways of compiling a Java application: using Just in Time Compilation (JIT) or Ahead of Time Compilation (AOT). The first is the default mode, and it is used by the Java Hotspot Virtual Machine to translate bytecode into machine code at runtime. The latter is supported by the novel GraalVM compiler and allows statically compiling bytecode directly into machine code at build time.
+
+To transform JVM bytecode into machine code that is executable in a specific hardware architecture, the JVM interprets the bytecode at runtime and figures out in which architecture is the program running.
+JIT compilers make programs cross-platform. (Indeed, the slogan “)write once, run anywhere)
+
+AOT compilation is a form of static compilation that consists in transforming the program into a machine code before it is executed.
+AOT compilers run programs more efficiently. AOT compilation is particularly suited for cloud applications. They offer faster startup speed, which results in shorter boot time and more straightforward horizontal scale-up of cloud services.
+
 ## OOP Objektorientierte Programmierung
 
 Modell der Computerprogrammierung, bei dem das Softwaredesign auf Daten oder Objekten basiert und nicht auf Funktionen und Logik. Ein Objekt kann als ein Datenfeld definiert werden, das eindeutige Attribute und Verhaltensweisen aufweist.

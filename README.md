@@ -7,3 +7,6 @@ some IT buzzwords
 * [Software Architecture](cheatsheets/SoftwareArchitecture.md)
 * [Javascript](cheatsheets/Javascript.md)
 * [Kubernetes](cheatsheets/Kubernetes.md)
+* [AWS](cheatsheets/AWS.md)
+* [Agile Software Development](cheatsheets/Agile_SoftwareDevelopment.md)
+* [Database](cheatsheets/Database.md)
