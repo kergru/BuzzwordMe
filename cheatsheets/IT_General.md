@@ -215,6 +215,13 @@ Internet oder im Intranet eines Unternehmens.
 ### ETag
 Entitäts-Kennzeichen‘) ist ein im HTTP 1.1 eingeführtes Header-Feld. Es dient zur Bestimmung von Änderungen an der angeforderten Ressource und wird hauptsächlich zum Caching, also der Vermeidung redundanter Datenübertragungen, verwendet.
 
+
+# UML - Unified Modeling Language
+
+Diagramms:
+* Class-Diagramm
+* Sequence-Diagramm
+
 # Bücher
 | Title                                                              | Autor                                                   |
 |--------------------------------------------------------------------|---------------------------------------------------------|

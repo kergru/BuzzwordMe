@@ -41,6 +41,15 @@ Modell der Computerprogrammierung, bei dem das Softwaredesign auf Daten oder Obj
 * **Sicherheit**. Durch Kapselung und Abstraktion wird komplexer Code verborgen
 * **Flexibilität**. Die Polymorphie ermöglicht es einer einzelnen Funktion, sich an die Klasse anzupassen
 
+
+### Composition over Inheritance
+1. Inheritance is tightly coupled whereas composition is loosely coupled.
+2. There is no access control in inheritance whereas access can be restricted in composition.
+3. Composition provides flexibility in invocation of methods that is useful with multiple subclass scenario.
+
+Use inheritance only when you are sure that superclass will not be changed, otherwise go for composition.
+
+
 ## Funktionale Programmierung
 Ein funktionales Programm besteht aus einer Reihe von Funktionsaufrufen. Eigenständige Wertzuweisungen existieren nicht. Alle Elemente können als Funktionen aufgefasst werden.
 
