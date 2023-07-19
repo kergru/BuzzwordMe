@@ -1,25 +1,60 @@
-# Microservice Archtekture
-(Martin Fowler)
+# Architecture styles
 
-# SOA
-service-oriented architecture, software approach for distributed systems
+## REST - Represential State Transfer
+(Roy Fielding)
+
+Paradigma für die Softwarearchitektur von verteilten Systemen.
+
+REST ist eine Abstraktion der Struktur und des Verhaltens des World Wide Web.
+Eine Ressource kann dabei über verschiedene Medientypen dargestellt werden, auch Repräsentation der Ressource genannt.
+Anders als bei vielen verwandten Architekturen kodiert REST keine Methodeninformation in den URI, da der URI Ort und Namen der Ressource angibt
+Die Bezeichnung „Representational State Transfer“ soll den Übergang vom aktuellen Zustand zum nächsten Zustand (state) einer Applikation verbildlichen. Dieser Zustandsübergang erfolgt durch den Transfer der Daten, die den nächsten Zustand repräsentieren.
+
+### Prinzipien
+
+* Client Server Architekur: Server einen Dienst bereit, der bei Bedarf vom Client angefragt werden kann
+* Zustandslosigkeit: Jede REST-Nachricht enthält alle Informationen, die für den Server bzw. Client notwendig sind, um die Nachricht zu verstehen. Weder der Server noch die Anwendung soll Zustandsinformationen zwischen zwei Nachrichten speichern
+* Caching
+* Einheitliche Schnittstelle
+  * Adressierbarkeit von Ressourcen
+  * Repräsentationen zur Veränderung von Ressourcen
+  * Selbstbeschreibende Nachrichten
+  * HATEOAS - Hypermedia as the Engine of Application State: Entwurfsprinzip von REST-Architekturen. Bei HATEOAS navigiert der Client einer REST-Schnittstelle ausschließlich über URLs, die vom Server bereitgestellt werden.
+
+### Umsetzung
+Für die Umsetzung des REST-Paradigmas wird ein zustandsloses Client-Server-Protokoll verwendet. Als Anwendungsschicht-Protokolle werden hauptsächlich HTTP und HTTPS eingesetzt.
+Wird über HTTP zugegriffen, so gibt die verwendete HTTP-Methode, darunter GET, POST, PUT und DELETE, an, welche Operation des Dienstes gewünscht ist.
+
+### Restful Webservices
+Architeckturstil für verteilte Systeme
+RESTful Webservices sind statuslos und liefern die Daten in unterschiedliche Repräsentationen (Formate) an den Aufrufer. Die Daten werden in mit einer URI eindeutig identifiziert und als Ressource bezeichnet.
+
+Alternativen:
+* RPC - Remote Procedure Call (OS dependent)
+* RMI - Remote Method Invocation (Java), supports object-oriented programming)
+
+
+## SOA - service-oriented architecture
+software approach for distributed systems
 
 The central concept behind your SOA design is the isolation of your sub-systems or services from the impact of change in other systems or services.
 You can get there by declaring service boundaries.
 
-# DDD
+## DDD
 (Eric Evans)
 basiert auf folgenden zwei Annahmen:
 * Der Schwerpunkt des Softwaredesigns liegt auf der Fachlichkeit und der Fachlogik.
 * Der Entwurf komplexer fachlicher Zusammenhänge sollte auf einem Modell der Anwendungsdomäne, dem Domänenmodell basieren.
-
+* Bei DDD geht man davon aus, dass der größte Teil der Komplexität einer Software nicht in der technischen Umsetzung liegt, sondern in der Modellierung der Domäne.
 Bestandteile:
-* Ubiquitäre Sprache
+* Ubiquitäre Sprache - common language between business analysts and developers for describing domain 
 * Domain-Modell:
   * Entities
-  * ValueObjects
-  * Aggregates
+  * ValueObjects -  objects without conceptual identity
+  * Aggregates - cluster of associated objects (customer, address, ...), Aggregates draw a boundary around one or more Entities.
+  * Aggregate root - The root is the only member of the AGGREGATE that outside objects are allowed to hold references (customer)
   * Bounded Context
+  * DomainEvent - customer's order
 
 
 ## Hexagonale Architektur (Ports & Adapters)
@@ -46,7 +81,7 @@ Domain besteht aus:
 
 statt globale Layer hat man Feature Packages mit jeweils Domain und Adpater
 
-# Schichten Architektur
+## Schichten Architektur
 
 Layered architectures are said to be the most common and widely used architectural framework in software development. It is also known as an n-tier architecture and describes an architectural pattern composed of several separate horizontal layers that function together as a single unit of software
 A layer is a logical separation of components or code:
@@ -55,14 +90,6 @@ A layer is a logical separation of components or code:
 * Domain: responsible for algorithms, and programming components
 * Infrastructure/Persistence: responsible for handling data, databases
 
-
-# Restful Webservices
-Architeckturstil für verteilte Systeme
-RESTful Webservices sind statuslos und liefern die Daten in unterschiedliche Repräsentationen (Formate) an den Aufrufer. Die Daten werden in mit einer URI eindeutig identifiziert und als Ressource bezeichnet.
-
-Alternativen:
-* RPC - Remote Procedure Call (OS dependent)
-* RMI - Remote Method Invocation (Java), supports object-oriented programming)
 
 
 # DesignPatterns

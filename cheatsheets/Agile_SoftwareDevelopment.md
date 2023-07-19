@@ -1,11 +1,13 @@
 # Agiles Projektmanagement / Agile Softwareentwicklung
 
+Agile software development teams today are able to leverage these same JIT principles by matching the amount of work in progress (WIP) to the team's capacity. This gives teams more flexible planning options, faster output, clearer focus, and transparency throughout the development cycle.
+
 ## Agiles Manifest
 
-1. Individuen und Interaktionen sind wichtiger als Prozesse und Werkzeuge.
-2. Funktionierende Software ist wichtiger als umfassende Dokumentation.
-3. Zusammenarbeit mit dem Kunden ist wichtiger als Vertragsverhandlungen.
-4. Reagieren auf Veränderung ist wichtiger als das Befolgen eines Plans.
+1. Individuen und Interaktionen sind wichtiger als Prozesse und Werkzeuge. (individuals and interactions over processes and tools)
+2. Funktionierende Software ist wichtiger als umfassende Dokumentation. (working software over comprehensive documentation)
+3. Zusammenarbeit mit dem Kunden ist wichtiger als Vertragsverhandlungen. (customer collaboration over contract negotiations)
+4. Reagieren auf Veränderung ist wichtiger als das Befolgen eines Plans. (responding to change over following a plan)
 
 ### Prinzipien hinter dem Agilen Manifest
 1. Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
@@ -23,6 +25,8 @@
 
 
 ## Scrum
+is an agile project management framework that helps teams structure and manage their work through a set of values, principles, and practices. 
+Scrum encourages teams to learn through experiences, self-organize while working on a problem, and reflect on their wins and losses to continuously improve.
 
 ### Scrum-Werte:
 * Selbstverpflichtung bzw. Commitment

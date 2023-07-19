@@ -24,12 +24,21 @@ Modell der Computerprogrammierung, bei dem das Softwaredesign auf Daten oder Obj
 * Vererbung. Klassen können Code von anderen Klassen wiederverwenden
 * Polymorphismus. Objekte sind so konzipiert, dass sie sich gemeinsam verhalten und mehr als eine Form annehmen können. Das Programm bestimmt, welche Bedeutung oder Verwendung für jede Ausführung dieses Objekts aus einer übergeordneten Klasse erforderlich ist, wodurch die Notwendigkeit, Code zu duplizieren, verringert wird.
 
-#### SOLID
+#### SOLID 
+(Robert C. Martin)
+
 * S - Single Responsibility (of a class)
 * O - Open-Closed - open for extension but closed for modification
 * L - Liskov substitution - objects in a programm should be replacable with instance of their subtypes without altering the correctness of that programm
 * I - Interface segregation - many client specific interfaces are better than one general purpose interface
 * D - Dependeny inversion - Depend on abstraction not concretion
+
+Solid Example: AreaCalculator
+* Single Responsibility: should only calculate not print result
+* Open-Closed: Should not be extended if you want to compute the area for a new type of shape, better each shape computes it's area
+* Liskov substitution: 
+* Interface segregation: AreaCalculator should only expose it's calculate function
+* Dependeny inversion: Inject a general Printer into the AreaCalculator instead of instantiate a concrete <HTML>Printer
 
 
 ### Vorteile der objektorientierten Programmierung
@@ -40,6 +49,15 @@ Modell der Computerprogrammierung, bei dem das Softwaredesign auf Daten oder Obj
 * **Schnittstellenbeschreibungen**. Die Beschreibungen externer Systeme sind einfach, da für die Kommunikation von Objekten Nachrichtenaustauschtechniken verwendet werden.
 * **Sicherheit**. Durch Kapselung und Abstraktion wird komplexer Code verborgen
 * **Flexibilität**. Die Polymorphie ermöglicht es einer einzelnen Funktion, sich an die Klasse anzupassen
+
+
+### Composition over Inheritance
+1. Inheritance is tightly coupled whereas composition is loosely coupled.
+2. There is no access control in inheritance whereas access can be restricted in composition.
+3. Composition provides flexibility in invocation of methods that is useful with multiple subclass scenario.
+
+Use inheritance only when you are sure that superclass will not be changed, otherwise go for composition.
+
 
 ## Funktionale Programmierung
 Ein funktionales Programm besteht aus einer Reihe von Funktionsaufrufen. Eigenständige Wertzuweisungen existieren nicht. Alle Elemente können als Funktionen aufgefasst werden.

@@ -79,6 +79,8 @@ horizontal: sharding, which adds more servers
 
 Aufteilung von Attributen auf Tabellen die keine Redundanzen enthalten, weil Mehrfachdatenhaltung mehr Speicherplatz verbraucht und die Gefahr von Inkonsistenzen mitsichbringt
 
+engl: is the process of structuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity.
+
 1. Normalform: atomar, frei von Wiederholung
-2. Normalform:  jedes Nichtschlüsselattribut von jedem Schlüsselkandidaten voll funktional abhängig ist.
-3. Normalform: kein Nichtschlüsselattribut transitiv von einem Kandidatenschlüssel abhängt.
+2. Normalform:  jedes Nichtschlüsselattribut von jedem Schlüsselkandidaten voll funktional abhängig ist. (every non-prime attribute of the relation is dependent on the whole of every candidate key)
+3. Normalform: kein Nichtschlüsselattribut transitiv von einem Kandidatenschlüssel abhängt. (all the attributes (e.g. database columns) are functionally dependent on solely the primary key)

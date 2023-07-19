@@ -4,9 +4,14 @@ ein quelloffenes Framework für die Java-Plattform, welches oft für Web-Anwendu
 
 flexible Modulsammlung nutzen. So erhalten Sie eine leistungsstarke Grundstruktur, die Sie kaum verändern müssen, und können sich ganz auf die Entwicklung der eigentlichen Business-Logik konzentrieren.
 
+engl:
+The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.
+
+A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.
 
 ## Vorteile:
 * Logik kann in Form von POJOs angelegt werden
+* einfache Konfiguration (mit SpringBoot, convention over configuration)
 * Fertiges Basiscodegerüst, das kaum Veränderungen bedarf
 * Kein Applikationsserver notwendig
 * Ermöglicht Unit- und Integrations-Tests
