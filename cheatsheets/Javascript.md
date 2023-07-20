@@ -15,6 +15,12 @@ Cons:
 * Callback: Node.js can lead to callback issues if not used correctly. Callback issues are where too many nested callbacks make the code difficult to read and debug.  
 * Single Threaded: Node.js is a single-threaded language that can only use one CPU core at a time. This can be a bottleneck for CPU-intensive tasks.
 
+## EventLoop WorkerPool
+* the Event Loop executes the JavaScript callbacks registered for events, and is also responsible for fulfilling non-blocking asynchronous requests like network I/O.
+* Node.js uses the Worker Pool to handle "expensive" tasks. This includes I/O for which an operating system does not provide a non-blocking version, as well as particularly CPU-intensive tasks.
+
+You should make sure you never block the Event Loop. In other words, each of your JavaScript callbacks should complete quickly.
+
 ## Basic Commands
 
 To see list of commands:

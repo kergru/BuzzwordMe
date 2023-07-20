@@ -1,3 +1,42 @@
+# REST - Represential State Transfer 
+(Roy Fielding)
+
+Paradigma für die Softwarearchitektur von verteilten Systemen.
+
+REST ist eine Abstraktion der Struktur und des Verhaltens des World Wide Web.
+Eine Ressource kann dabei über verschiedene Medientypen dargestellt werden, auch Repräsentation der Ressource genannt.
+Anders als bei vielen verwandten Architekturen kodiert REST keine Methodeninformation in den URI, da der URI Ort und Namen der Ressource angibt
+Die Bezeichnung „Representational State Transfer“ soll den Übergang vom aktuellen Zustand zum nächsten Zustand (state) einer Applikation verbildlichen. Dieser Zustandsübergang erfolgt durch den Transfer der Daten, die den nächsten Zustand repräsentieren.
+
+## Prinzipien
+
+* Client Server Architekur: Server einen Dienst bereit, der bei Bedarf vom Client angefragt werden kann
+* Zustandslosigkeit: Jede REST-Nachricht enthält alle Informationen, die für den Server bzw. Client notwendig sind, um die Nachricht zu verstehen. Weder der Server noch die Anwendung soll Zustandsinformationen zwischen zwei Nachrichten speichern
+* Caching
+* Einheitliche Schnittstelle
+  * Adressierbarkeit von Ressourcen
+  * Repräsentationen zur Veränderung von Ressourcen
+  * Selbstbeschreibende Nachrichten
+  * HATEOAS - Hypermedia as the Engine of Application State: Entwurfsprinzip von REST-Architekturen. Bei HATEOAS navigiert der Client einer REST-Schnittstelle ausschließlich über URLs, die vom Server bereitgestellt werden.
+
+## Umsetzung
+Für die Umsetzung des REST-Paradigmas wird ein zustandsloses Client-Server-Protokoll verwendet. Als Anwendungsschicht-Protokolle werden hauptsächlich HTTP und HTTPS eingesetzt.
+Wird über HTTP zugegriffen, so gibt die verwendete HTTP-Methode, darunter GET, POST, PUT und DELETE, an, welche Operation des Dienstes gewünscht ist. 
+
+
+# SOAP - Simple Object Access Protocol
+
+SOAP API ermöglicht es Anwendungen, Nachrichten zu übermitteln, auch wenn sie in verschiedenen Programmiersprachen geschrieben sind. Es handelt sich um ein Protokoll mit mehr Komplexität in Bezug auf Sicherheit und Datenkommunikation. Da es sich bei diesem Protokoll um Nachrichten handelt, liegt das Hauptaugenmerk auf dem Schutz vor unbefugtem Zugriff durch die Sicherheit von WS.
+* SOAP Nachrichten im Standard-XML-Format
+
+## WSDL - Web Services Description Language
+WSDL ist eine XML-Notation für die Beschreibung von Web-Services. WSDL-Definitionen informieren einen Client über den Aufbau einer Web-Service-Anforderung und beschreiben die Schnittstelle, die vom Web-Service-Provider bereitgestellt wird.
+Bestandteile:
+* types: Definition der Datentypen
+* bindings: Bestimmt das konkrete Protokoll und Datenformat
+* port: Eine Menge von abstrakten Operationen (one-way, request-response,..)
+* message
+
 # OOAD - Objektorientierte Analyse und Design
 sind objektorientierte Varianten der zwei allgemeinen Tätigkeiten Anforderungsanalyse (objektorientierte Analyse) und Systementwurf (objektorientiertes Design) im Entwicklungsprozess eines Softwaresystems.
 
@@ -35,16 +74,6 @@ Beim objektorientierten Design wird das in der Analyse erstellte Domänenmodell 
 * die Services sind feingranular und über leichtgewichtige Protokolle verbunden (Http/REST, AMQP)
 * die Services sind unabhängig voneinander entwickelbar und deploybar und um Business-Anforderungen herum gruppiert
 * die Services sind selfcontained, bringen alles mit was sie für ihren Betrieb benötigen
-
-engl:
-Microservices - also known as the microservice architecture - is an architectural style that structures an application as a collection of services that are:
-
-* Independently deployable
-* Loosely coupled
-* Organized around business capabilities
-* Owned by a small team
-
-The microservice architecture enables an organization to deliver large, complex applications rapidly, frequently, reliably and sustainably - a necessity for competing and winning in today’s world.
 
 Fowler: do one thing and do it well
 
@@ -142,11 +171,8 @@ Vorteile:
 ## Reactive System
 * Responsive (antwortbereit): Das System antwortet unter allen Umständen zeitgerecht, solange dies überhaupt möglich ist
 * Resilient (widerstandsfähig): Das System bleibt selbst bei Ausfällen von Hard- oder Software antwortbereit.
-  * erreciht durch: replication, isolation, delegation
 * Elastic (skalierbar): Das System bleibt auch unter sich ändernden Lastbedingungen antwortbereit.
 * Message-driven (nachrichtenorientiert): Das System verwendet asynchrone Nachrichtenübermittlung zwischen seinen Komponenten zur Sicherstellung von deren Entkopplung und Isolation sowie zwecks Übermittlung von Fehlern an übergeordnete Komponenten.
-
-Large systems are composed of smaller ones.
 
 
 # Idempotenz
@@ -188,25 +214,6 @@ Internet oder im Intranet eines Unternehmens.
 
 ### ETag
 Entitäts-Kennzeichen‘) ist ein im HTTP 1.1 eingeführtes Header-Feld. Es dient zur Bestimmung von Änderungen an der angeforderten Ressource und wird hauptsächlich zum Caching, also der Vermeidung redundanter Datenübertragungen, verwendet.
-
-## SOAP - Simple Object Access Protocol
-
-SOAP API ermöglicht es Anwendungen, Nachrichten zu übermitteln, auch wenn sie in verschiedenen Programmiersprachen geschrieben sind. Es handelt sich um ein Protokoll mit mehr Komplexität in Bezug auf Sicherheit und Datenkommunikation. Da es sich bei diesem Protokoll um Nachrichten handelt, liegt das Hauptaugenmerk auf dem Schutz vor unbefugtem Zugriff durch die Sicherheit von WS.
-* SOAP Nachrichten im Standard-XML-Format
-
-### WSDL - Web Services Description Language
-WSDL ist eine XML-Notation für die Beschreibung von Web-Services. WSDL-Definitionen informieren einen Client über den Aufbau einer Web-Service-Anforderung und beschreiben die Schnittstelle, die vom Web-Service-Provider bereitgestellt wird.
-Bestandteile:
-* types: Definition der Datentypen
-* bindings: Bestimmt das konkrete Protokoll und Datenformat
-* port: Eine Menge von abstrakten Operationen (one-way, request-response,..)
-* message
-
-# UML - Unified Modeling Language
-
-Diagramms:
-* Class-Diagramm
-* Sequence-Diagramm
 
 # Bücher
 | Title                                                              | Autor                                                   |

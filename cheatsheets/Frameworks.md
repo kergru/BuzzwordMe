@@ -1,6 +1,6 @@
 # LogCollectors
 
-## Logstash vs Fluentd
+## Log[Frameworks.md](Frameworks.md)stash vs Fluentd
 
 **Docker support:** Docker provides an in-built fluentd logging driver. The logging driver sends container logs 
 to the fluentd collector as structured log data. In the case of Logstash, an extra agent (**filebeat**) is required 
