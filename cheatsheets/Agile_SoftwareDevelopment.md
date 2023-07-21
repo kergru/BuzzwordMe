@@ -29,22 +29,26 @@ is an agile project management framework that helps teams structure and manage t
 Scrum encourages teams to learn through experiences, self-organize while working on a problem, and reflect on their wins and losses to continuously improve.
 
 ### Scrum-Werte:
-* Selbstverpflichtung bzw. Commitment
-* Mut
-* Offenheit
-* Fokus
-* Respekt
+* Selbstverpflichtung (Commitment)
+* Mut (Courage)
+* Offenheit (Openness)
+* Fokus (Focus)
+* Respekt (Respect)
 
 ### Rollen
-* ProductOwner
+* ProductOwner (owns ProductBacklog)
 * Scrum-Master
-* Developer
+* Developer (owns SprintBacklog)
 
 ### Ereignisse
 * Sprint-Planning
 * Daily Review
 * Sprint Review
 * Sprint Retrospektive
+
+also:
+* Grooming 
+* Refinement
 
 ## Kanban
 Kanban ist eine einfache, agile "Best Practice"-Methode, die darauf abzielt, einen kontinuierlichen Workflow

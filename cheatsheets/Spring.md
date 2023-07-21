@@ -100,6 +100,26 @@ Der Authentifizierungsmechanismus von Spring Security basiert auf verschiedenen 
 * Authentication: Filter extended from AbstractAuthenticationProcessingFilter.
 * Authorization: FilterSecurityInterceptor
 
+
+## Spring Bean Lifecycle
+
+Bean life cycle is managed by the spring container.
+
+* default: singleton
+* prototype: new bean instance for each container request
+* request: scoped on http web request
+* session: scoped on http web session
+
+
+**Customize Bean Lifecycle:**
+
+Spring framework provides the following four ways for controlling life cycle events of a bean:
+
+1. InitializingBean (afterPropertiesSet callback method) and DisposableBean (destroy callback method) callback interfaces
+2. Aware interfaces for specific behavior
+3. Custom init() and destroy() methods in bean configuration file
+4. @PostConstruct and @PreDestroy annotations
+
 ## Spring Alternativen
 
 ### Micronaut

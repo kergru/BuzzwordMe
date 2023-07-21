@@ -91,6 +91,12 @@ A layer is a logical separation of components or code:
 * Infrastructure/Persistence: responsible for handling data, databases
 
 
+## Event-driven / Message-drivenArchitecture
+
+* uses events / messages to trigger and communicate between decoupled services
+* can be divided into three components: producer, consumer, and broker.
+
+The main difference between event-driven and message-driven systems is that a message is sent to a pre-determined location, whereas an event is broadcast to any potential listeners. Messages are stored in a queue and are then processed (and usually deleted) once, by a single, predefined consumer.
 
 # DesignPatterns
 
