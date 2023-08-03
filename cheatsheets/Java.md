@@ -18,11 +18,15 @@ AOT compilers run programs more efficiently. AOT compilation is particularly sui
 
 Modell der Computerprogrammierung, bei dem das Softwaredesign auf Daten oder Objekten basiert und nicht auf Funktionen und Logik. Ein Objekt kann als ein Datenfeld definiert werden, das eindeutige Attribute und Verhaltensweisen aufweist.
 
+The main aim of object-oriented programming is to implement real-world entities.
+
+The core concept of the object-oriented approach is to break complex problems into smaller objects.
+
 ### Prinzipien der OOP
 * Kapselung. Dieser Grundsatz besagt, dass alle wichtigen Informationen innerhalb eines Objekts enthalten sind und nur ausgewählte Informationen offengelegt werden.
 * Abstraktion. Objekte legen nur die internen Mechanismen offen, die für die Verwendung durch andere Objekte relevant sind
 * Vererbung. Klassen können Code von anderen Klassen wiederverwenden
-* Polymorphismus. Objekte sind so konzipiert, dass sie sich gemeinsam verhalten und mehr als eine Form annehmen können. Das Programm bestimmt, welche Bedeutung oder Verwendung für jede Ausführung dieses Objekts aus einer übergeordneten Klasse erforderlich ist, wodurch die Notwendigkeit, Code zu duplizieren, verringert wird.
+* Polymorphismus. Objekte sind so konzipiert, dass sie sich gemeinsam verhalten und mehr als eine Form annehmen können. Das Programm bestimmt, welche Bedeutung oder Verwendung für jede Ausführung dieses Objekts aus einer übergeordneten Klasse erforderlich ist, wodurch die Notwendigkeit, Code zu duplizieren, verringert wird. (describes a pattern in object oriented programming in which classes have different functionality while sharing a common interface.)
 
 #### SOLID 
 (Robert C. Martin)
@@ -63,7 +67,27 @@ Use inheritance only when you are sure that superclass will not be changed, othe
 Ein funktionales Programm besteht aus einer Reihe von Funktionsaufrufen. Eigenständige Wertzuweisungen existieren nicht. Alle Elemente können als Funktionen aufgefasst werden.
 
 ## Reactive Programming 
-is the processing of the asynchronous event stream, on which you can observe.
+is the processing of the asynchronous event stream, on which you can observe with backpressure.
+
+Reactive Programming verspricht eine höhere Performance von Enterprise-Java-Anwendungen bei geringerem Speicherbedarf. 
+Erreicht wird dieses Versprechen, indem blockierende Aufrufe vermieden werden. 
+Blockierende Aufrufe führen im Betriebssystem immer zu Prozess- und damit zu Kontextwechseln. Solche Kontextwechsel haben einen hohen CPU- und Speicher-Overhead. Dieser Overhead wird durch weniger Kontextwechsel reduziert.
+Die oben erwähnte Realisierung der Java-Threading-Abstraktion hat aktuell allerdings einen gravierenden Nachteil: Java-Threads sind als Betriebssystemprozesse realisiert, sodass jeder Threadwechsel einen (sehr teuren) Kontextwechsel im Betriebssystem bedeutet.
+Hier setzt Reactive Programming an. Das Paradigma ist genau entgegengesetzt zum Java-Threading-Modell. Während das Threading-Modell versucht, Asynchronität vom Benutzer fernzuhalten („Alles passiert in einem Thread“) ist bei Reactive Programming die Asynchronität quasi das Prinzip. Der Programmablauf wird als eine Sequenz von Ereignissen angesehen, die natürlich asynchron auftreten können. Jedes dieser Ereignisse wird von einem Publisher veröffentlicht. Auf welchem Thread der Publisher das tut, ist dabei unerheblich. Der Programmcode besteht in einer reaktiven Anwendung aus Funktionen, die auf diese asynchrone Veröffentlichung von Ereignissen hören, sie verarbeiten und gegebenenfalls neue Ereignisse veröffentlichen.
+Dieses Vorgehen ist vor allem dann sinnvoll, wenn mit externen Ressourcen wie z. B. einer Datenbank gearbeitet wird.
+Der Vorteil von Reactive Programming liegt also darin, dass eine Entkopplung von auszuführendem Code und dem ausführenden Thread entsteht. Damit gibt es weniger teure Kontextwechsel auf Betriebssystemebene.
+
+Probleme entstehen bei der Integration in klassische Enterprise-Anwendungen. Dort hängen die klassischen Themen wie Security, Transaktionen oder Tracing bisher noch immer am aktuellen Thread. Beginnt man mit Reactive Programming, funktioniert dieses Konstrukt nicht mehr und es müssen andere Lösungen gefunden werden.
+
+### Backpressure
+
+Was passiert, wenn zu viele Ereignisse zu schnell eintreten, so dass das System sie nicht verarbeiten kann?
+Datenfluss zwischen Ereignisproduzenten und -konsumenten zu managen und sicherzustellen, dass letzterer die Menge der eingehenden Events verarbeiten kann, ohne überfordert zu werden
+
+* Dropping: Wenn sich die Events stauen, werden sie "weggeworfen". Sobald der Konsument in der Lage ist, mehr zu verarbeiten, werden die aktuellsten Ereignisse geliefert. Hier liegt der Fokus auf Lebendigkeit.
+* Buffering: Eine Warteschlange mit unverarbeiteten Ereignissen wird erstelllt und schrittweise an den Konsumenten übergeben, sobald dieser dazu in der Lage ist, sie zu verarbeiten. Der Fokus: Konsistenz.
+* Throttling: Die Rate der Ereignisbereitstellung wird durch diverse Strategien wie Zeitdrosselung, Zähldrosselung oder Token-Buckets verringert.
+* Signaling: Eine Möglichkeit wird geschaffen, um dem Event-Produzenten den Backpressure-Status-Quo mitzuteilen, damit dieser entsprechend reagieren kann.
 
 ## Java Keywords
 
@@ -126,7 +150,10 @@ Reactive Programming is the processing of the asynchronous event stream, on whic
 
 ### CompletableFutures
 
-CompletableFuture is built as an advancement to Future interface. Both of these are used for asynchronous programming in java. While Future interface has limitations in terms of what can be done with a result of an asynchronous call, CompletableFuture provides an array of APIs for composing, combining and error handling in asynchronous situations. It also provides a way to build a pipeline which will perform all the operations in asynchronous manner, in the order we define.
+CompletableFuture is built as an advancement to Future interface. Both of these are used for asynchronous programming in java. 
+While Future interface has limitations in terms of what can be done with a result of an asynchronous call, 
+CompletableFuture provides an array of APIs for composing, combining and error handling in asynchronous situations. 
+It also provides a way to build a pipeline which will perform all the operations in asynchronous manner, in the order we define.
 
 ### Stream API
 
@@ -172,6 +199,10 @@ The purpose of the class is to provide a type-level solution for representing op
 Der Diamant-Operator vereinfacht die Schreibweise bei der Deklaration bevorzugt geschachtelter generischer Typen, indem er diese verkürzt.
 The diamond operator adds the type inference feature to the compiler and reduces the verbosity in the assignments introduced with generics.
 
+### Fork-Join Framework
+
+### Java NIO 2.0 and improved File API
+
 ## Java 5
 
 ### Generics
@@ -211,7 +242,6 @@ Blocking methods execute synchronously and non-blocking methods execute asynchro
 * **Servlet 3.0:** async processing, the server can dispatch the request processing in a separate thread pool while the request is being processed by the application. However, when it comes to I/O, work always happens on a server thread and it is always blocking. This means that a "slow client" can monopolize a server thread, since the server is blocked while reading/writing to that client with a poor network connection.
 * **Servlet 3.1:** async I/O is allowed and in that case the "one request/thread" model isn't anymore.
 * **Servlet 4.0:** server push
-
 ## Netty
 is an asynchronous event-driven network application framework.
 
@@ -232,7 +262,17 @@ specification that defines how to persist data in Java applications
 
 ## Spring Data API
 * is a JPA data access abstraction. Spring Data JPA cannot work without a JPA provider.
-* layer on top of jpa 
+* layer on top of jpa
 
 # GraalVM 
 is a Java Virtual Machine for compiling and running applications written in different languages to a native machine binary. 
+
+
+# Stream.map() vs Stream.flatMap() in Java 8
+In short, here are the key difference between map() vs flatMap() in Java 8:
+
+* The function you pass to the map() operation returns a single value.
+* The function you pass to flatMap() operation returns a Stream of value.
+* flatMap() is a combination of map and flat operation. 
+* map() is used for transformation only, but flatMap() is used for both transformation and flattening. 
+

@@ -49,6 +49,13 @@ Scrum encourages teams to learn through experiences, self-organize while working
 also:
 * Grooming 
 * Refinement
+* Definition of Ready, check with INVEST
+  * I: Indepedent
+  * N: Negotioable (verhandelbar was ihre Implementierung anbelangt)
+  * V: Valueable
+  * E: Estimable
+  * S: Small
+  * T: Testable
 
 ## Kanban
 Kanban ist eine einfache, agile "Best Practice"-Methode, die darauf abzielt, einen kontinuierlichen Workflow
@@ -56,10 +63,28 @@ zu schaffen - und einen dauerhaften Mehrwert für den Kunden. Ziel ist es, jeden
 zu visualisieren und zu verbessern. Das Endergebnis ist eine Entwicklungspipeline, die zuverlässig und effizient hochwertige Arbeit leistet.
 
 ### 3 Grundprinzipien
-* Workflow-Abbildung
-    * Backlog -> Ready -> Coding -> Testing -> Approval -> Done
+* Workflow-Abbildung> Testing -> Approval -> Done
 * WIP begrenzen
 * Vorlaufzeit messen
+  * Backlog -> Ready -> Coding -
+
+
+## SAFe - Scaled Agile Framework
+
+Die Scaled-Agile-Framework-Prinizpien
+
+SAFe ist um neun Schlüssel-Prinzipien herum aufgebaut, die auf bereits existierenden Lean-Management- und Agile-Methoden basieren:
+
+1. Eine ökonomische Perspektive für eine optimale Lead-Zeit einnehmen und dabei die beste Qualität und den größten Mehrwert liefern;
+2. Alle Facetten der Softwareentwicklung bei der Implementierung von Systemen mit einbeziehen;
+3. Flexible Wahlmöglichkeiten bewahren und innovative Ideen fördern;
+4. Schrittweise entwickeln mit schnellen, integrierten Lernzyklen, die Kundenfeedback zulassen und Risiken reduzieren;
+5. Meilensteine setzen und funktionierende Systeme evaluieren, um einen wirtschaftlichen Benefit sicherzustellen;
+6. "Work in Progress" soweit wie möglich reduzieren, Batch-Größen reduzieren und Warteschlangen managen, um einen fortlaufenden Workflow zu garantieren;
+7. Bereichsübergreifende Synchronisation, um neue Geschäftsmöglichkeiten zu erkennen und notwendige Korrekturen bei Bedarf umsetzen zu können;
+8. Wissensarbeiter mit intrinsischer Motivation ausstatten, um ihr volles Potenzial zu erschließen;
+9. Dezentralisierung der Entscheidungsfindung für mehr Agilität und Effektivität;
+
 
 ## Techniken der agilen Softwareentwicklung
 

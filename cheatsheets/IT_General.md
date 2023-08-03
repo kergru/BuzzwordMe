@@ -215,6 +215,51 @@ Internet oder im Intranet eines Unternehmens.
 ### ETag
 Entitäts-Kennzeichen‘) ist ein im HTTP 1.1 eingeführtes Header-Feld. Es dient zur Bestimmung von Änderungen an der angeforderten Ressource und wird hauptsächlich zum Caching, also der Vermeidung redundanter Datenübertragungen, verwendet.
 
+
+# PKI - Public Key Infrastructure
+ermöglicht einen sicheren Datenaustausch in einem öffentlichen Netzwerk. Zur Verschlüsselung rechnergestützter Kommunikation werden Zertifikate aus einem privaten sowie öffentlichen Kryptographie-Schlüssel ausgestellt, verteilt und geprüft.
+Die PKI erstellt digitale Zertifikate, die öffentliche Schlüssel Instanzen zuordnen, speichert diese Zertifikate sicher in einem zentralen Repository und widerruft sie bei Bedarf.
+
+asymetrische Verschlüsselung
+
+## Komponenten der PKI
+
+Die folgenden Hauptkomponenten der PKI werden in diesem Artikel ausführlich besprochen:
+
+1. Zertifizierungsstelle (CA)
+   Die Hauptaufgabe der Zertifizierungsstelle besteht darin, den an einen bestimmten Benutzer gebundenen öffentlichen Schlüssel digital zu signieren und zu veröffentlichen. Dies geschieht mithilfe des eigenen privaten Schlüssels der Zertifizierungsstelle, sodass sich das Vertrauen in den Schlüssel eines Nutzers beziehungsweise einer Nutzerin aus dem Vertrauen in die Gültigkeit des Schlüssels der Zertifizierungsstelle ergibt.
+
+2. Digitales Zertifikat
+   Mit einer PKI können Nachrichten digital signiert und verschlüsselt werden. Der oder die Sender:in benötigt dafür den öffentlichen Schlüssel (Public Key) des Empfängers beziehungsweise der Empfängerin. Dieser wurde z. B. von einer Webseite heruntergeladen oder per E-Mail versandt. Zur Bestätigung der Authentizität dieses Schlüssels dienen digitale Zertifikate. Mit ihnen wird überprüft, ob ein bestimmter öffentlicher Schlüssel zu einer bestimmten Instanz gehört.
+
+   X.509-Zertifikat
+
+
+3. Digitale Signatur
+   Ein Zertifikat wiederum ist durch eine digitale Signatur geschützt, deren Authentizität mit dem öffentlichen Schlüssel des Zertifikatsausstellers geprüft werden kann. Die Echtheit des letzten Zertifikats in einer solchen Kette muss durch höchstmögliche Sicherheitsanforderungen gewährleistet sein.
+
+3. Registrierungsbehörde
+ 
+4. Validierungsbehörde (OSCP oder CRL)
+5. Sichere Lagerung 
+6. Öffentliches/privates Schlüsselpaar
+
+* TSL - Trusted Service List
+* CRL - Certificate Revocation List, Zertifikatssperrlisten
+* CTL - Zertifikatsvertrauenslisten
+* CMS - Cryptographic Message Syntax 
+* PEM - Private Enhanced Mail, Standardformat für X.509 Zertifikate
+* DER - Distinguished Encoding Rules,  is a binary encoding for X.509 certificates and private keys
+* PKCS - Public-Key Cryptography Standards, ist eine Sammlung von Standards für asymmetrische Verschlüsselungsverfahren.
+* CVC - Card Verifiable Certificate, ist ein Public-Key-Zertifikat, das in einem besonders kompakten Format gespeichert wurde.
+
+## Bestandteile eines Zertifikats
+
+* Informationen zur Schlüsselgenerierung, einschließlich des öffentlichen Schlüssels, des privaten Schlüssels und anderer Details.
+* Ein Zertifikat mit einer digitalen Signatur von einem vertrauenswürdigen Dritten, der Zertifizierungsstelle oder CA genannt wird.
+* Die Signatur macht diese Informationen vertrauenswürdig, da nur der Eigentümer des privaten Schlüssels diese Signaturen generieren kann (bei selbstsignierten Zertifikaten).
+* Nachweis des Zertifikatsbesitzes (d. h. Nachweis), der typischerweise Identifikationsdaten wie Firmenname, Adresse usw. umfasst.
+
 # Bücher
 | Title                                                              | Autor                                                   |
 |--------------------------------------------------------------------|---------------------------------------------------------|

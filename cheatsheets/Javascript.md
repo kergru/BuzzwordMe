@@ -154,9 +154,14 @@ initialize with config.ts manually
 * loopback
 * express
 * axios - Promise based Http client
-* 
+* Template Engines
+  * Pug
+  * Handlebars
+  * Partials
+* sequelize - ORM mapper (used for mysql)
+* mongoose - Object Document Mapper (ODM, used for MongoDB)
 
-## Testing Libs & Framewoks
+## Testing Libs & Frameworks
 * sinon
 * mocha
 * jest
