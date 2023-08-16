@@ -133,7 +133,7 @@ Decorators laufen, wenn JS die konstruktor function definition findet
 
 # NodeJS
 
-NodeJs kennt nur JS kein TS, es ignoriert Dateiendungen (.js, .ts) und versucht jeden Dtaie als JS auszuführen
+NodeJs kennt nur JS kein TS, es ignoriert Dateiendungen (.js, .ts) und versucht jeden Datei als JS auszuführen
 
 # Jest
 TestingFramework, TestRunner, AssertionLibrary with Matchers
@@ -160,11 +160,30 @@ initialize with config.ts manually
   * Partials
 * sequelize - ORM mapper (used for mysql)
 * mongoose - Object Document Mapper (ODM, used for MongoDB)
-
+s
 ## Testing Libs & Frameworks
 * sinon
 * mocha
 * jest
 * chai
 
+
+# Angular
+
+## Component Communication
+pass value between components
+* @Input Decorator - expose a property from a component to other components -> binding to custom properties
+* @Output Decorator - EventEmitter
+
+## View Encapsulation
+css of a component affects only this component
+
+## Lifecycle Hooks
+* ngOnChanges - call after a bound input property changes
+* ngOnInit - called oneće the component isinitialized
+* ngDoCheck - called during every change detection run
+* ngAfterContentInit - called after content has been projected into view
+* ngAfterViewInit
+* ngAfterViewChecked
+* ngOnDestroy
 

@@ -260,6 +260,30 @@ Die folgenden Hauptkomponenten der PKI werden in diesem Artikel ausführlich bes
 * Die Signatur macht diese Informationen vertrauenswürdig, da nur der Eigentümer des privaten Schlüssels diese Signaturen generieren kann (bei selbstsignierten Zertifikaten).
 * Nachweis des Zertifikatsbesitzes (d. h. Nachweis), der typischerweise Identifikationsdaten wie Firmenname, Adresse usw. umfasst.
 
+
+
+# Monitoring
+4 goldene Signale:
+* Latenz -> Histogramme (keine Durchscnittswerte)
+* Datenverkehr
+* Fehler
+* Sättigung
+
+2 Methoden:
+* USE-Methode 2 : Auslastung, Sättigung und Fehler. Mit dieser Methode kann die Leistung fast aller Systeme analysiert werden.
+* RED-Methode 3 : Rate, Fehler und Dauer. Diese Methode konzentriert sich auf die Serviceüberwachung.
+
+
+## Synthetic monitoring
+also called synthetic testing, is an application performance monitoring practice that emulates the paths users might take when engaging with an application
+
+## Tools
+* Datadog (SaaS)
+* Cloudprober
+* Prometheus
+* Grafana
+
+
 # Bücher
 | Title                                                              | Autor                                                   |
 |--------------------------------------------------------------------|---------------------------------------------------------|

@@ -84,3 +84,74 @@ engl: is the process of structuring a relational database in accordance with a s
 1. Normalform: atomar, frei von Wiederholung
 2. Normalform:  jedes Nichtschlüsselattribut von jedem Schlüsselkandidaten voll funktional abhängig ist. (every non-prime attribute of the relation is dependent on the whole of every candidate key)
 3. Normalform: kein Nichtschlüsselattribut transitiv von einem Kandidatenschlüssel abhängt. (all the attributes (e.g. database columns) are functionally dependent on solely the primary key)
+
+
+
+# BLOB Binary Large Object 
+
+beschreibt eine große Datei, die in binärer Form vorliegt und in einer Datenbank abgelegt (Bspw Bilddatei)
+
+# MongoDB
+
+## aggregate
+Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.
+
+	input ->$match -> $group -> $sort -> output
+
+When to use MongoDB aggregate?
+
+You can use aggregation operations to:
+* Group values from multiple documents together.
+* Perform operations on the grouped data to return a single result.
+* Analyze data changes over time.
+
+	db.orders.aggregate( [
+	   // Stage 1: Filter pizza order documents by pizza size
+	   {
+	      $match: { size: "medium" }
+	   },
+	   // Stage 2: Group remaining documents by pizza name and calculate total quantity
+	   {
+	      $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
+	   }
+	] )
+	
+What are the limitations of aggregate in MongoDB?
+
+The aggregate command can either return a cursor or store the results in a collection. Each document in the result set is subject to the 16 megabyte BSON Document Size limit. If any single document exceeds the BSON Document Size limit, the aggregation produces an error. The limit only applies to the returned documents.
+
+
+### $lookup
+join collections
+
+	{
+	   $lookup:
+	     {
+	       from: <collection to join>,
+	       localField: <field from the input documents>,
+	       foreignField: <field from the documents of the "from" collection>,
+	       as: <output array field>
+	     }
+	}
+
+
+### $facet 
+allows you to create multi-faceted aggregations
+
+
+### $bucket
+Categorizes incoming documents into groups, called buckets, based on a specified expression and bucket boundaries and outputs a document per each bucket.
+    
+### $search 
+performs a full-text search of the field or fields in an Atlas collection. The fields must be covered by an Atlas Search index.
+
+## Anwendung
+* Echtzeitanalye -> BigData wg Skalierung
+* ContentManagement, Produktkatalog -> Das flexible Datenmodell erleichtert das Speichern verschiedener Arten von Inhalten, einschließlich Bilder, Texte und Videos, sowie von Metadaten.
+
+# ETL
+
+* Extracting data from sources
+* Transforming data into data models
+* Loading data into data warehouses
+
